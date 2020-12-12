@@ -1,0 +1,28 @@
+<script type ="text/javascript">
+
+var listofnames = ["Bob","Adam","Mohsin","John","Aarti"]; 
+
+function populatename()
+{
+    for (var i=0; i<listofnames.length;i++)
+    {
+        var x = listofnames[i];
+        
+        if (x.startsWith(document.getElementById('name').value))
+        {
+            document.getElementById('autosuggest').innerHTML =  x;
+            break;
+        }
+        else
+        {
+            document.getElementById('autosuggest').innerHTML =  " ";
+        }            
+    }
+}
+
+</script>
+["Bob","Adam","Mohsin","John","Aarti"]
+<BR>
+<input type ="text" id ="name" onkeyup="populatename()"/>
+<BR>
+<label id ="autosuggest"></label>
