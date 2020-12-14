@@ -1,0 +1,71 @@
+<HTML>
+ <HEAD>
+</HEAD>
+
+<script type="text/javascript">
+
+function setValue(num)
+{
+    document.getElementById("val").value=document.getElementById("val").value+ num;
+}
+var firstvalue =0;
+var operator ;
+function setMode(factor)
+{
+    firstvalue = document.getElementById("val").value;
+    document.getElementById("val").value="";
+    operator=factor;
+}
+
+function calculate()
+{
+    var secondvalue = document.getElementById("val").value;
+    document.getElementById("val").value="";
+    if (operator == 'add')
+        document.getElementById("val").value = parseInt(firstvalue) + parseInt(secondvalue);
+    else if (operator == 'sub')
+        document.getElementById("val").value = parseInt(firstvalue) - parseInt(secondvalue);
+    else if (operator == 'mul')
+        document.getElementById("val").value = parseInt(firstvalue) * parseInt(secondvalue);
+
+}
+
+function clearValue()
+{
+	document.getElementById("val").value="";
+}
+</script>
+ <BODY>
+<table>
+<tr>
+    <td colspan="4">
+       <input type ="text" id ="val" name="val" />
+    </td>
+</tr>
+<tr>
+        <td><input type="button" id = "1" value = "1" onclick="setValue(1)" /></td>
+        <td><input type="button" id = "2" value = "2" onclick="setValue(2)"/></td>
+        <td><input type="button" id = "3" value = "3" onclick="setValue(3)"/></td>
+        <td><input type="button" id = "add" value = "+" onclick="setMode('add')"></td>
+</tr>
+<tr>
+        <td><input type="button" id = "4" value = "4" onclick="setValue(4)"/></td>
+        <td><input type="button" id = "5" value = "5" onclick="setValue(5)"/></td>
+        <td><input type="button" id = "6" value = "6" onclick="setValue(6)"/></td>
+        <td><input type="button" id = "sub" value = "-" onclick="setMode('sub')"/></td>
+</tr>        
+<tr>
+        <td><input type="button" id = "7" value = "7" onclick="setValue(7)"/></td>
+        <td><input type="button" id = "8" value = "8" onclick="setValue(8)"/></td>
+        <td><input type="button" id = "9" value = "9" onclick="setValue(9)"/></td>
+        <td><input type="button" id = "sub" value = "*" onclick="setMode('mul')" /></td>
+</tr>
+<tr>
+        <td><input type="button" id = "0" value = "0" onclick="clearValue(0)"/></td>
+        <td><input type="button" id = "clear" value = "C" onclick="clearValue()"/></td>
+        <td><input type="button" id = "eq" value = "eq" onclick="calculate()"/></td>
+</tr>        
+</table>     
+
+ </BODY>
+</HTML>
